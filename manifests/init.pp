@@ -84,7 +84,7 @@
 #
 # @param additional_mounts Provide additional volumes, needed within
 #   the HDM container. e.g. Directory with ca, cert oand/or key.
-#   On Puppet Enterprise with lockless deployments, the code dir is a 
+#   On Puppet Enterprise with lockless deployments, the code dir is a
 #   symbolic link. One must add
 #   /opt/puppetlabs/server/data/puppetserver/filesync/client/versioned-dirs'.
 #   The array is mapped as source:target.
@@ -155,11 +155,11 @@
 #
 class hdm (
   # installation parameter
-  String[1]                     $version               = '3.2.0',
+  String[1]                     $version               = '4.1.1',
   Enum['docker', 'rvm']         $method                = 'docker',
   String[1]                     $container_registry_url = 'ghcr.io/betadots/hdm',
   Boolean                       $manage_docker         = true,
-  String[1]                     $ruby_version          = '3.4.2',
+  String[1]                     $ruby_version          = '3.4.9',
   # required application parameter
   Stdlib::Port                  $port                  = 3000,
   Stdlib::IP::Address::Nosubnet $bind_ip               = '0.0.0.0',
